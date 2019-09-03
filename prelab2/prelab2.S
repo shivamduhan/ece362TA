@@ -21,4 +21,10 @@ var:	 .word 0x12345678
 
 	//Step 3
 
+	ldr r0, =var
+	lsrs r1, r0, #4 //logical right shift by 4 bits
+	lsls r2, r1, #4 //logical left shift by 4 bits. r2 = r0
+	movs r0, #7
+	
+
 	
