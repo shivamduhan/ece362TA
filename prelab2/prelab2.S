@@ -87,6 +87,35 @@ var:	.word 0x12345678
 	rsbs r0,r1,#0 //r0 = 0x32
 
 	//Step 11
+	movs r0, #0x43
+	movs r1, #0x44
+	movs r2, #0x55
+	subs r0, r1 //decimal value -1, r0 = 0xFFFFFFFFF 
+	sbcs r2, r1 //arithmetic val 11, -1 carry so r2 = 0x10 final answer
+
+	//Step 12
+	ldr  r0, =0x8b9faef8
+	ldr  r1, =0x55555555
+	eors r0, r1 //r0 = 0xDECAFBAD, negative flag set coz negative number
+
+	//step 13
+	ldr  r0, =0xfedc //16 bit value
+	sxth r0, r0 //sign extend half word i.e. 16 bits and keep negative sign so r0 = 0xfffffedc and negative flag is 1
+	lsls r1, r0, #4 //Logical left shift by 4 bits so r0 = 0xffffedc0, 1 got shifted out so carry flag is 1
+
+	//step 14
+	ldr r0, =0xabcd
+	rev r0, r0 //byte(8 bit) reverse in 32 bit so r0 = 0xcdab00000
+
+	//step 15
+	ldr r0, =0xEEEEEEEE
+	mvns r1, r0 //Bitwise not. 1110 becomes 0001. 
+	
+
+	
+
+
+	
 	
 	
 	
